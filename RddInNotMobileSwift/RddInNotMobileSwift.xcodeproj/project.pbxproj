@@ -41,6 +41,10 @@
 		C867165821C3D6160003A6D1 /* BlockchainNotesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C867165721C3D6160003A6D1 /* BlockchainNotesRepository.swift */; };
 		C867165A21C3E5D90003A6D1 /* BlocksRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C867165921C3E5D90003A6D1 /* BlocksRoutes.swift */; };
 		C867165C21C3E6180003A6D1 /* BlocksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C867165B21C3E6180003A6D1 /* BlocksRepository.swift */; };
+		C867166121C3F0E40003A6D1 /* ClassificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C867165E21C3F0E40003A6D1 /* ClassificationService.swift */; };
+		C867166221C3F0E40003A6D1 /* Sentiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C867165F21C3F0E40003A6D1 /* Sentiment.swift */; };
+		C867166321C3F0E40003A6D1 /* SentimentPolarity.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C867166021C3F0E40003A6D1 /* SentimentPolarity.mlmodel */; };
+		C867166521C3F2050003A6D1 /* NotesCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C867166421C3F2050003A6D1 /* NotesCtrl.swift */; };
 		OBJ_1000 /* LoggerAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "LoggerAPI::LoggerAPI::Product" /* LoggerAPI.framework */; };
 		OBJ_1001 /* CHTTPParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Kitura-net::CHTTPParser::Product" /* CHTTPParser.framework */; };
 		OBJ_1012 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_361 /* Logger.swift */; };
@@ -2592,6 +2596,10 @@
 		C867165721C3D6160003A6D1 /* BlockchainNotesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockchainNotesRepository.swift; sourceTree = "<group>"; };
 		C867165921C3E5D90003A6D1 /* BlocksRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksRoutes.swift; sourceTree = "<group>"; };
 		C867165B21C3E6180003A6D1 /* BlocksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksRepository.swift; sourceTree = "<group>"; };
+		C867165E21C3F0E40003A6D1 /* ClassificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassificationService.swift; sourceTree = "<group>"; };
+		C867165F21C3F0E40003A6D1 /* Sentiment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sentiment.swift; sourceTree = "<group>"; };
+		C867166021C3F0E40003A6D1 /* SentimentPolarity.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SentimentPolarity.mlmodel; sourceTree = "<group>"; };
+		C867166421C3F2050003A6D1 /* NotesCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCtrl.swift; sourceTree = "<group>"; };
 		"CloudEnvironment::CloudEnvironment::Product" /* CloudEnvironment.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CloudEnvironment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CloudFoundryEnv::CloudFoundryEnv::Product" /* CloudFoundryEnv.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CloudFoundryEnv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Configuration::Configuration::Product" /* Configuration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Configuration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3443,6 +3451,7 @@
 				C867164C21C3A6B70003A6D1 /* InMemoryNotesRepository.swift */,
 				C867164E21C3AEF50003A6D1 /* NotesRepository.swift */,
 				C867165721C3D6160003A6D1 /* BlockchainNotesRepository.swift */,
+				C867166421C3F2050003A6D1 /* NotesCtrl.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -3455,6 +3464,16 @@
 				C867165B21C3E6180003A6D1 /* BlocksRepository.swift */,
 			);
 			path = Blockchain;
+			sourceTree = "<group>";
+		};
+		C867165D21C3F07C0003A6D1 /* MachineLearning */ = {
+			isa = PBXGroup;
+			children = (
+				C867165E21C3F0E40003A6D1 /* ClassificationService.swift */,
+				C867165F21C3F0E40003A6D1 /* Sentiment.swift */,
+				C867166021C3F0E40003A6D1 /* SentimentPolarity.mlmodel */,
+			);
+			path = MachineLearning;
 			sourceTree = "<group>";
 		};
 		OBJ_10 /* Application */ = {
@@ -4440,6 +4459,7 @@
 		OBJ_8 /* RddInNotMobileSwift */ = {
 			isa = PBXGroup;
 			children = (
+				C867165D21C3F07C0003A6D1 /* MachineLearning */,
 				C867165021C3D2810003A6D1 /* Blockchain */,
 				C867164921C3A60E0003A6D1 /* Notes */,
 				OBJ_9 /* main.swift */,
@@ -6121,11 +6141,15 @@
 				C867164F21C3AEF50003A6D1 /* NotesRepository.swift in Sources */,
 				C867165C21C3E6180003A6D1 /* BlocksRepository.swift in Sources */,
 				C867165821C3D6160003A6D1 /* BlockchainNotesRepository.swift in Sources */,
+				C867166221C3F0E40003A6D1 /* Sentiment.swift in Sources */,
 				C867164821C3A5620003A6D1 /* NotesRoutes.swift in Sources */,
 				OBJ_406 /* InitializationError.swift in Sources */,
+				C867166121C3F0E40003A6D1 /* ClassificationService.swift in Sources */,
 				OBJ_407 /* Metrics.swift in Sources */,
 				C867164D21C3A6B70003A6D1 /* InMemoryNotesRepository.swift in Sources */,
+				C867166521C3F2050003A6D1 /* NotesCtrl.swift in Sources */,
 				C867165221C3D2AB0003A6D1 /* Block.swift in Sources */,
+				C867166321C3F0E40003A6D1 /* SentimentPolarity.mlmodel in Sources */,
 				OBJ_408 /* HealthRoutes.swift in Sources */,
 				C867164B21C3A61B0003A6D1 /* Note.swift in Sources */,
 				C867165421C3D2F80003A6D1 /* Blockchain.swift in Sources */,
@@ -9266,7 +9290,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -9287,7 +9311,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_OPTIMIZATION_LEVEL = s;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;

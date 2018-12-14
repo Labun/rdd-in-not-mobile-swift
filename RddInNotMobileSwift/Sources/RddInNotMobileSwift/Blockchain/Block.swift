@@ -29,6 +29,6 @@ class Block: Codable {
 extension Block {
     
     static func createGenesisBlock() -> Block {
-        return Block(data: Note(content: "Genesis note"))
+        return Block(data: Note(content: "Genesis note", mood: "😃"))
     }
 }

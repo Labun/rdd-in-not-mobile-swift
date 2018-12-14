@@ -49,25 +49,6 @@
       }
     },
     "\/notes" : {
-      "get" : {
-        "responses" : {
-          "200" : {
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#\/definitions\/Note"
-              }
-            },
-            "description" : "successful response"
-          }
-        },
-        "consumes" : [
-          "application\/json"
-        ],
-        "produces" : [
-          "application\/json"
-        ]
-      },
       "post" : {
         "consumes" : [
           "application\/json"
@@ -93,14 +74,45 @@
             }
           }
         ]
+      },
+      "get" : {
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#\/definitions\/Note"
+              }
+            },
+            "description" : "successful response"
+          }
+        },
+        "consumes" : [
+          "application\/json"
+        ],
+        "produces" : [
+          "application\/json"
+        ]
       }
     }
   },
   "basePath" : "http://localhost:8080\/",
   "definitions": {
+    "Block": {
+      "type": "object",
+      "required": ["dateCreated","nonce","data","index"],
+      "properties": {
+        "index": {"type":"integer"},
+        "dateCreated": {"type":"string"},
+        "previousHash": {"type":"string"},
+        "hash": {"type":"string"},
+        "nonce": {"type":"integer"},
+        "data": {"$ref":"#\/definitions\/Note"}
+      }
+    },
     "Status": {
       "type": "object",
-      "required": ["details","timestamp","status"],
+      "required": ["timestamp","status","details"],
       "properties": {
         "status": {"type":"string"},
         "details": {"type":"array","items":{"type":"string"}},
@@ -112,19 +124,8 @@
       "required": ["content"],
       "properties": {
         "content": {"type":"string"},
+        "mood": {"type":"string"},
         "createdAt": {"type":"number"}
-      }
-    },
-    "Block": {
-      "type": "object",
-      "required": ["dateCreated","data","nonce","index"],
-      "properties": {
-        "index": {"type":"integer"},
-        "dateCreated": {"type":"string"},
-        "previousHash": {"type":"string"},
-        "hash": {"type":"string"},
-        "nonce": {"type":"integer"},
-        "data": {"$ref":"#\/definitions\/Note"}
       }
     }
   }

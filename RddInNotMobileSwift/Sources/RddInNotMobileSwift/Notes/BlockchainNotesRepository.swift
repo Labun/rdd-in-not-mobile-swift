@@ -16,12 +16,9 @@ class BlockchainNotesRepository: NotesRepository {
     
     func add(item: Note) -> Note {
         
-        var note = item
-        note.createdAt = Date()
-        
-        let block = Block(data: note)
+        let block = Block(data: item)
         blockchain.addBlock(block)
         
-        return note
+        return item
     }
 }

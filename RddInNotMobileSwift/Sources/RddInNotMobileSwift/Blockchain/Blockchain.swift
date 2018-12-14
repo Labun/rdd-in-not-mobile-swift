@@ -34,11 +34,11 @@ class Blockchain {
     
     private func displayBlock(_ block :Block) {
         print("------ Block \(block.index) ---------")
-        print("Date Created : \(block.dateCreated) ")
+//        print("Date Created : \(block.dateCreated) ")
         print("Data : \(block.data) ")
-        print("Nonce : \(block.nonce) ")
-        print("Previous Hash : \(block.previousHash) ")
-        print("Hash : \(block.hash) ")
+//        print("Nonce : \(block.nonce) ")
+//        print("Previous Hash : \(block.previousHash) ")
+//        print("Hash : \(block.hash) ")
         
     }
     

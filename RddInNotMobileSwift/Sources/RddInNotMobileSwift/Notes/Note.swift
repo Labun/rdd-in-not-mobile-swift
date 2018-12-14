@@ -3,10 +3,12 @@ import Foundation
 struct Note: Codable {
     
     var content: String
+    var mood: String?
     var createdAt: Date?
     
-    init(content: String) {
+    init(content: String, mood: String) {
         self.content = content
+        self.mood = mood
     }
     
     func toString() -> String {

@@ -24,9 +24,12 @@ public class App {
         initializeHealthRoutes(app: self)
         
         let blockchain = Blockchain(Block.createGenesisBlock())
+        let blockchainNotesRepository = BlockchainNotesRepository(blockchain: blockchain)
+        let classificationService = ClassificationService()
         
         initializeNotesRoutes(app: self,
-                              repository: BlockchainNotesRepository(blockchain: blockchain))
+                              notesCtrl: NotesCtrl(notesRepository: blockchainNotesRepository,
+                                                    classificationService: classificationService))
         initializeBlocksRoutes(app: self,
                                repository: BlocksRepository(blockchain: blockchain))
         KituraOpenAPI.addEndpoints(to: router)

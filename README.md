@@ -73,3 +73,7 @@ query blocks {
 ```
 
 ![Blockchain](KEmMxZLG.png)
+
+### 4. Machine Learning 
+iOS11 demo application for sentiment polarity analysis https://github.com/cocoa-ai/SentimentCoreMLDemo
+
