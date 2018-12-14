@@ -19,3 +19,25 @@ curl -H "Content-Type: application/json" -d '{ "content": "First note"}' http://
 ```
 
 ![backend](RXCgnHUy.png)
+
+### 2. GraphQL 
+OASGraph getting started guide - http://v4.loopback.io/getting-started-oasgraph.html
+ - `npm i -g oasgraph-cli`
+ - `http://localhost:3000/openapi` => `openapi.json`
+ - Add `"basePath" : "http://localhost:8080\/"`
+ - oasgraph openapi.json
+ - `http://localhost:3001/graphql`
+```
+mutation postNotes {
+  postNotes(noteInput: {content: "GraphQL is gr8"}) {
+    content
+  }
+}
+query notes {
+  notes {
+    content
+  }
+}
+```
+
+![arch diagram](aSau7Jqi.png)
