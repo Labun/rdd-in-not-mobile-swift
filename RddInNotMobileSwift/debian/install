@@ -1,0 +1,3 @@
+.build/							usr/src/RddInNotMobileSwift
+terraform/scripts/install.sh	usr/src/RddInNotMobileSwift
+terraform/scripts/start.sh		usr/src/RddInNotMobileSwift

@@ -1,0 +1,4 @@
+module hcapiplugin {
+    umbrella "/Users/piotrlabunski/Development/Workspace/rdd-in-not-mobile-swift/RddInNotMobileSwift/.build/checkouts/omr-agentcore-5362426391027593313/src/hcapiplugin/include"
+    export *
+}
