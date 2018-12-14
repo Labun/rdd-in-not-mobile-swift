@@ -22,8 +22,13 @@ public class App {
     func postInit() throws {
         // Endpoints
         initializeHealthRoutes(app: self)
+        
+        let blockchain = Blockchain(Block.createGenesisBlock())
+        
         initializeNotesRoutes(app: self,
-                              repository: InMemoryNotesRepository())
+                              repository: BlockchainNotesRepository(blockchain: blockchain))
+        initializeBlocksRoutes(app: self,
+                               repository: BlocksRepository(blockchain: blockchain))
         KituraOpenAPI.addEndpoints(to: router)
     }
 

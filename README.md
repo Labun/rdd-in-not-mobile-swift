@@ -40,4 +40,36 @@ query notes {
 }
 ```
 
-![arch diagram](aSau7Jqi.png)
+![GraphQL](aSau7Jqi.png)
+
+### 3. Blockchain 
+Blockchain Programming in iOS - https://medium.com/@azamsharp/blockchain-programming-in-ios-ffaff9b328cc
+
+> A blockchain, originally block chain, is a growing list of records, called blocks, which are linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data
+> - https://en.wikipedia.org/wiki/Blockchain
+
+![blockchain_linked_list](http://devhumor.com/content/uploads/images/April2018/blockchain_linked_list.png)
+
+ - Add `Block` class
+ - Add `Blockchain` class
+ - Add `BlockchainNotesRepository` class
+ - Add `BlocksRepository` class 
+ - Expose `/blocks` endpoint
+
+```
+query blocks {
+  blocks {
+    index
+    dateCreated
+    previousHash
+    hash
+    nonce
+    data {
+      content
+      createdAt
+    }
+  }
+}
+```
+
+![Blockchain](KEmMxZLG.png)
