@@ -1,4 +1,6 @@
-class InMemoryNotesRepository: NoteRepository {
+import Foundation
+
+class InMemoryNotesRepository: NotesRepository {
     
     var notes = [Note]()
     
@@ -6,7 +8,12 @@ class InMemoryNotesRepository: NoteRepository {
         return notes
     }
     
-    func add(item: Note) {
-        notes.append(item)
+    func add(item: Note) -> Note {
+       
+        var note = item
+        note.createdAt = Date()
+        notes.append(note)
+        
+        return note
     }
 }

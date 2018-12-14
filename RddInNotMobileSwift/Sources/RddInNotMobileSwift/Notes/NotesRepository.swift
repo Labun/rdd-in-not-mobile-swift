@@ -1,4 +1,4 @@
-protocol NoteRepository  {
+protocol NotesRepository  {
     func getAll() -> [Note]
-    func add(item: Note)
+    func add(item: Note) -> Note
 }
