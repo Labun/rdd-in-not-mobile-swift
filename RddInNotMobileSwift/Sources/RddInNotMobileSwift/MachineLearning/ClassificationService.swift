@@ -12,8 +12,6 @@ final class ClassificationService {
     options: Int(self.options.rawValue)
   )
 
-  // MARK: - Prediction
-
   func predictSentiment(from text: String) -> Sentiment {
     do {
       let inputFeatures = features(from: text)
@@ -22,9 +20,10 @@ final class ClassificationService {
         throw Error.featuresMissing
       }
 
-      let output = try model.prediction(input: inputFeatures)
+    let output = try model.prediction(input: inputFeatures)
+
+    switch output.classLabel {
         
-      switch output.classLabel {
       case "Pos":
         return .positive
       case "Neg":
@@ -37,8 +36,6 @@ final class ClassificationService {
     }
   }
 }
-
-// MARK: - Features
 
 private extension ClassificationService {
   func features(from text: String) -> [String: Double] {
